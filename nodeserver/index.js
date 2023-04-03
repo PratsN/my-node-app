@@ -21,9 +21,9 @@ app.use(cors({ origin: "*" }));
 app.use(userRouter);
 app.use(tableRouter);
 
-app.use(express.static(path.join(__dirname, "../reactclient/build")));
+app.use(express.static(path.join(__dirname, "./reactclient/build")));
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../reactclient/build/index.html"));
+  res.sendFile(path.join(__dirname, "./reactclient/build/index.html"));
 });
 
 app.get("/", (req, res) => {
