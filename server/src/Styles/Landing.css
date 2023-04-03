@@ -1,0 +1,45 @@
+.content {
+  background-image: linear-gradient(to right,#012169, #13274F );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh; 
+  justify-content: center;
+ 
+}
+
+
+.hero-heading {
+  color: #fff;
+  font-size: 1.5rem;
+  width: 80%;
+  font-weight: bolder;
+  margin-left: 10%;
+  font-size: 4rem;
+}
+
+.landing-text {
+  padding-top: 8rem;
+
+}
+
+.login-btn {
+  background-color: aliceblue;
+  color: black;
+  padding: 0.3rem 1rem;
+  border-radius: 6px;
+  border-color: aliceblue;
+}
+
+@media screen and (max-width: 450px) {
+  
+.hero-heading {
+  color: #fff;
+  font-size: 2rem;
+
+  font-weight: bolder;
+
+
+}
+
+  }

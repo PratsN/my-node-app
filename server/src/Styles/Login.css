@@ -1,0 +1,71 @@
+.hero-login {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 200px;
+    margin: 2rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    color: #0D4C92;
+}
+
+
+.button {
+    background-color: #0D4C92 !important;
+} 
+
+
+.button:hover {
+    background-color: darkblue !important;
+    color: white;
+}
+.secondary-action {
+    padding: 1rem 0;
+}
+
+.link {
+    font-weight: 700;
+    text-decoration: none;
+    color: #0D4C92;
+}
+
+.link:focus {
+    color: #0D4C92;
+}
+
+.link:active {
+    color: #0D4C92;
+}
+
+.link:visited {
+    color: #0D4C92;
+}
+.warning {
+    margin: 8px;
+    color: orange;
+    font-size: 16px;
+  }
+
+
+@media screen and (min-width: 768px) {
+    .content {
+        justify-content: flex-end;
+    }
+    .form {
+        min-width: 24rem;
+    }
+}
+

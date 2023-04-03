@@ -1,0 +1,16 @@
+.footer {
+    background: #008E97;
+    width: 100%;
+    padding: 16px 0px;
+    color: white;
+    vertical-align: bottom;
+    margin-top: 40px;
+    text-align: center;
+  
+  
+}
+
+.heart {
+    font-size: large;
+    color: white;
+}
