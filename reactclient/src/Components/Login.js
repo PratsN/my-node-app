@@ -3,11 +3,10 @@ import axiosInstance from "../utils/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { Button, Stack, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import "../Styles/Login.css";
+import { useSnackbar } from "notistack";
 import Footer from "./Footer";
 import Header from "./Header";
-import { useSnackbar } from "notistack";
-
+import "../Styles/Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -56,7 +55,7 @@ const Login = () => {
           }
         })
         .catch((err) => {
-          console.log("ERR :: ", err.response.data.err);
+          //console.log("ERR :: ", err.response.data.err);
           let error_message = err.response.data.err;
           enqueueSnackbar(error_message, { variant: "warning" });
         });

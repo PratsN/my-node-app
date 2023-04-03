@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 import { Avatar, Stack } from "@mui/material";
-import "../Styles/Header.css";
 import { useSnackbar } from "notistack";
+import "../Styles/Header.css";
+
 const Header = ({ hasHiddenAuthButtons }) => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Button, Stack, TextField } from "@mui/material";
-import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../utils/axiosInstance";
+import { Button, Stack, TextField } from "@mui/material";
+import { Box } from "@mui/system";
 import { useSnackbar } from "notistack";
 
 const AddUser = () => {
@@ -47,7 +47,7 @@ const AddUser = () => {
           if (response.status === 200) {
             enqueueSnackbar("User added succesfully", { variant: "success" });
             navigate("/dashboard");
-            console.log("RESPONSE ====> ", response.data);
+            //console.log("RESPONSE ====> ", response.data);
           }
         })
         .catch((err) => {

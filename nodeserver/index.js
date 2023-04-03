@@ -2,8 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
-const bodyParser = require("body-parser");
 require("dotenv").config();
+const path = require("path");
 
 const PORT = process.env.PORT;
 const userRouter = require("./routes/user.routes");
@@ -20,6 +20,11 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 app.use(userRouter);
 app.use(tableRouter);
+
+app.use(express.static(path.join(__dirname, "../reactclient/build")));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../reactclient/build/index.html"));
+});
 
 app.get("/", (req, res) => {
   return res.status(200).json("server is listening");

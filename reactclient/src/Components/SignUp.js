@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../utils/axiosInstance";
 import { Button, Stack, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import "../Styles/SignUp.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import "../Styles/SignUp.css";
 import { useSnackbar } from "notistack";
 const SignUp = () => {
   let navigate = useNavigate();
@@ -54,11 +54,11 @@ const SignUp = () => {
           if (response.status === 200) {
             enqueueSnackbar("Signup succesfully", { variant: "success" });
             navigate("/login");
-            console.log("RESPONSE ====> ", response.data);
+            // console.log("RESPONSE ====> ", response.data);
           }
         })
         .catch((err) => {
-          console.log("ERR :: ", err.response.data.err);
+          //console.log("ERR :: ", err.response.data.err);
           let error_message = err.response.data.err;
           enqueueSnackbar(error_message, { variant: "warning" });
         });

@@ -7,7 +7,7 @@ const tableCreation = async (req, res) => {
     const result = await newUser.save();
     res.json(result);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     return res.status(404).json(error);
   }
 };

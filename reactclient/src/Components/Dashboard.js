@@ -9,7 +9,6 @@ const Dashboard = () => {
     <>
       <Header hasHiddenAuthButtons={true}></Header>
       <div className="headline">Welcome to User Management Portal</div>
-
       <UserListing />
       <Footer />
     </>

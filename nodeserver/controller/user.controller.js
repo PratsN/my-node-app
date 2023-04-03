@@ -8,7 +8,7 @@ const { isUpper, isLower } = require("../middleware/string.validator");
 const userRegistration = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
-    console.log("REQUEST-BODY", req.body);
+    //console.log("REQUEST-BODY", req.body);
     const isUserAlreadyRegistered = await User.findOne({ email: email }).lean();
     if (isUserAlreadyRegistered) {
       return res
@@ -65,7 +65,7 @@ const userLogin = async (req, res) => {
     }
 
     const userToken = jwt.sign({ data: { email: email } }, JWT_KEY);
-    console.log("LOGIN USER ::: ", email);
+    //console.log("LOGIN USER ::: ", email);
     return res.status(200).json({
       email: email,
       firstName: isUserRegisteredOrNot.firstName,
@@ -95,10 +95,10 @@ const forgetPassword = async (req, res) => {
       }
     );
 
-    console.log("#############", result);
+    //console.log("#############", result);
     return res.status(200).json({ success: "Password Changed Successfully" });
   } catch (err) {
-    console.log("ERR :::: ", err);
+    //console.log("ERR :::: ", err);
   }
 };
 

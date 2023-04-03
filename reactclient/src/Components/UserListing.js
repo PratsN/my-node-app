@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import axiosInstance from "../utils/axiosInstance";
+import EditData from "./EditData";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { Box, Stack } from "@mui/system";
@@ -12,13 +15,10 @@ import TableRow from "@mui/material/TableRow";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "../Styles/UserListing.css";
-import axiosInstance from "../utils/axiosInstance";
-import EditData from "./EditData";
-import { useNavigate } from "react-router-dom";
 
 const UserListing = () => {
-  const [data, setData] = useState([]);
   const { enqueueSnackbar } = useSnackbar();
+  const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const searchInputRef = useRef(null);
 
@@ -28,9 +28,9 @@ const UserListing = () => {
       let response = await axios.get("http://localhost:3001/table");
       //console.log(response.data)
       setData(response.data);
-      console.log("DATA:: ", data);
+      //console.log("DATA:: ", data);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
   useEffect(() => {

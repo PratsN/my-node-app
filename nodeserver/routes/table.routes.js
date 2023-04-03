@@ -1,5 +1,8 @@
 const express = require("express");
 const router = express.Router();
+
+const cors = require("cors");
+
 const {
   tableCreation,
   getAllUser,
@@ -9,7 +12,7 @@ const {
 } = require("../controller/table.controller");
 
 router.post("/table", tableCreation);
-router.get("/table", getAllUser);
+router.get("/table", cors(), getAllUser);
 router.delete("/table/:id", deleteUser);
 router.patch("/table/:id", editeUser);
 router.get("/table/search", searchUser);

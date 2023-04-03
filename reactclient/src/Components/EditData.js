@@ -1,21 +1,21 @@
 import React, { useState } from "react";
+import axiosInstance from "../utils/axiosInstance";
+import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import { Button, inputClasses } from "@mui/material";
+import { Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import { FormControl } from "@mui/material";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import IconButton from "@mui/material/IconButton";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import axiosInstance from "../utils/axiosInstance";
-import { useNavigate } from "react-router-dom";
+
 const EditData = ({ id }) => {
-  const [open, setOpen] = useState(false);
   let navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   let [error, setError] = useState("");
+  const [open, setOpen] = useState(false);
   const [input, setInput] = useState({
     name: "",
     city: "",
@@ -65,7 +65,7 @@ const EditData = ({ id }) => {
             });
             window.location.reload();
             navigate("/dashboard");
-            console.log("RESPONSE ====> ", response.data);
+            //console.log("RESPONSE ====> ", response.data);
           }
         })
         .catch((err) => {

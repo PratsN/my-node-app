@@ -1,12 +1,8 @@
-import "../Styles/Landing.css";
-import { Box } from "@mui/system";
-import { useNavigate } from "react-router-dom";
-import { Button, Stack } from "@mui/material";
 import Header from "./Header";
 import Footer from "./Footer";
+import "../Styles/Landing.css";
+import { Box } from "@mui/system";
 const Landing = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <Header hasHiddenAuthButtons={true}></Header>

@@ -1,22 +1,15 @@
-import { Button, Stack, TextField } from "@mui/material";
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
-import { Box } from "@mui/system";
 import React, { useState } from "react";
-import "../Styles/Login.css";
 import axiosInstance from "../utils/axiosInstance";
+import { useNavigate } from "react-router-dom";
 import { isLower, isUpper } from "../lib/stringValidator";
+import { Button, Stack, TextField } from "@mui/material";
+import { Box } from "@mui/system";
 import { useSnackbar } from "notistack";
-// import validator from "validator";
+import "../Styles/Login.css";
 
 const Forgot = () => {
   let navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
-  const { id } = useParams();
   const [error, setError] = useState("");
   let [forgot, setForgot] = useState({
     password: "",
@@ -69,7 +62,7 @@ const Forgot = () => {
           }
         })
         .catch((err) => {
-          console.log("ERR :: ", err.response.data.err);
+          //console.log("ERR :: ", err.response.data.err);
           let error_message = err.response.data.err;
           enqueueSnackbar(error_message, { variant: "warning" });
         });
